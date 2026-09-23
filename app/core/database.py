@@ -57,3 +57,20 @@ def init_db():
     from app.models import user, face_encoding, log  # noqa: F401  (register models)
 
     Base.metadata.create_all(bind=engine)
+
+    # Automatically seed default admin if not present
+    from app.models.user import User
+    from app.core.security import hash_password
+
+    with db_session() as db:
+        admin_user = db.query(User).filter(User.EmployeeID == "admin").first()
+        if not admin_user:
+            new_admin = User(
+                EmployeeID="admin",
+                FullName="System Administrator",
+                Role="admin",
+                Status="active",
+                HashedPassword=hash_password("admin"),
+            )
+            db.add(new_admin)
+

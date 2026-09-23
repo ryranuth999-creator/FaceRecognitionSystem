@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
     # ---------- Database ----------
-    DB_BACKEND: str = "mssql"  # "mssql", "sqlite", or "mysql"
+    DB_BACKEND: str = "sqlite"  # "sqlite", "mssql", or "mysql"
     DB_SERVER: str = "localhost"
     DB_PORT: int = 1433
     DB_NAME: str = "FaceRecognitionDB"
@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     SQLITE_PATH: str = "./dev.db"
 
     # ---------- Face recognition ----------
-    FACE_MATCH_THRESHOLD: float = 0.70
+    FACE_MATCH_THRESHOLD: float = 0.45
     FACE_MODEL: str = "hog"  # "hog" (CPU) or "cnn" (GPU)
     UNKNOWN_FACE_DIR: str = "app/static/unknown_faces"
     EMBEDDINGS_PER_USER: int = 20
