@@ -10,10 +10,12 @@ pyodbc
 alembic
 
 # --- Face detection / recognition ---
-opencv-python
-face-recognition          # dlib-based, 128-d embeddings (see README for InsightFace swap)
+opencv-python-headless
+insightface
+onnxruntime
 numpy
 Pillow
+setuptools<70.0.0
 
 # --- Auth / security ---
 python-jose[cryptography]
