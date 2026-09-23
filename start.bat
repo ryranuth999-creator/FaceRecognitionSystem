@@ -1,0 +1,9 @@
+@echo off
+echo Checking port 8000...
+for /f "tokens=5" %%a in ('netstat -aon ^| findstr :8000 ^| findstr LISTENING') do (
+    echo Stopping process ID %%a running on port 8000...
+    taskkill /f /pid %%a >nul 2>&1
+)
+echo Starting application...
+.\venv\Scripts\python.exe -m uvicorn app.main:app --reload
+pause

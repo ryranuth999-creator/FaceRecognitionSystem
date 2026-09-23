@@ -1,0 +1,31 @@
+# --- Web framework ---
+fastapi
+uvicorn[standard]
+python-multipart
+jinja2
+
+# --- Database (SQL Server) ---
+sqlalchemy
+pyodbc
+alembic
+
+# --- Face detection / recognition ---
+opencv-python
+face-recognition          # dlib-based, 128-d embeddings (see README for InsightFace swap)
+numpy
+Pillow
+
+# --- Auth / security ---
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
+
+# --- Notifications ---
+python-telegram-bot
+aiosmtplib
+email-validator
+
+# --- Background tasks / misc ---
+apscheduler
+pydantic
+pydantic-settings

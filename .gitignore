@@ -1,0 +1,37 @@
+# Python virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Environment secrets
+.env
+.env.local
+
+# Databases & local sqlite
+*.db
+*.sqlite3
+dev.db
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing & cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & Editor settings
+.vscode/
+.idea/
+
+# Local static uploads & snapshots
+app/static/unknown_faces/*
+!app/static/unknown_faces/.gitkeep
+training/raw_photos/
+
+# OS generated files
+.DS_Store
+Thumbs.db
