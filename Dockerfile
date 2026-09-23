@@ -22,8 +22,8 @@ RUN python -c "import insightface; insightface.app.FaceAnalysis(name='buffalo_l'
 # Copy project files
 COPY . .
 
-# Expose port
-EXPOSE 8000
+# Expose port (Render defaults to 10000)
+EXPOSE 10000
 
-# Run FastAPI server
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run FastAPI server with dynamic port support
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-10000}"]
