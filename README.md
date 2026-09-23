@@ -1,4 +1,4 @@
-# Face Recognition Authentication System
+ Face Recognition Authentication System
 
 Face-recognition based authentication and attendance logging, backed by
 SQL Server, with Telegram + Email alerts whenever an unrecognized
